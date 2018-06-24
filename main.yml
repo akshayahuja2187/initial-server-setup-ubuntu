@@ -1,0 +1,24 @@
+---
+
+- hosts: all
+  remote_user: "{{ user }}"
+
+  vars_files:
+    - vars/main.yml
+
+  roles:
+    - name: essentials
+      tags: essentials
+
+    - name: timezone
+      tags: timezone
+
+    - name: iptables
+      tags: iptables
+
+    - name: fail2ban
+      tags: fail2ban
+     
+    - name: motd
+      tags: motd
+      become: true
