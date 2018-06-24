@@ -27,12 +27,6 @@ Create `inventory` file. Its content is something like this
 xx.xxx.xx.xx
 ```
 
-## Install deps
-
-```bash
-ansible-galaxy install -r requirements.yml
-```
-
 ## Initial setup
 
 By default on ubuntu 16.04 there is no python 2 and aptitude.
