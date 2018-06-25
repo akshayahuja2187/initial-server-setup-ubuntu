@@ -38,6 +38,10 @@ ansible-playbook initial-setup.yml
 
 Beside it this playbook also creates user and configures ssh server.
 
+## UFW
+
+Enables only port 22(ssh) for login. You need to edit from_ip=IP replacing IP with your IP Address to restrict to particular IP.
+
 ## Environment variables
 
 Copy `vars/main.yml.example` to `vars/main.yml` and change
