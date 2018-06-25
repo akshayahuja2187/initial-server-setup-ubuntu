@@ -20,10 +20,10 @@
 
 ## inventory file
 
-Create `inventory` file. Its content is something like this
+Edit `inventory\hosts` file. Its content is something like this
 
 ```
-[web]
+[DEV]
 xx.xxx.xx.xx
 ```
 
@@ -57,7 +57,9 @@ mkpasswd --method=SHA-512
 ## Run
 
 ```bash
-ansible-playbook main.yml
+run the plabooks by executing:
+
+$ scripts/run-scripts.sh
 ```
 
 To run only specific roles
