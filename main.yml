@@ -22,3 +22,7 @@
     - name: motd
       tags: motd
       become: true
+ 
+    - name: ufw
+      tags: ufw 
+      become: true
