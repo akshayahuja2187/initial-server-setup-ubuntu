@@ -59,7 +59,7 @@ mkpasswd --method=SHA-512
 ```bash
 run the plabooks by executing:
 
-$ scripts/run-scripts.sh
+$ ./run-scripts.sh
 ```
 
 To run only specific roles
