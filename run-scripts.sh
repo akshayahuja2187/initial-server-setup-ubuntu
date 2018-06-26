@@ -1,6 +1,6 @@
 #!/bin/bash
 
 set -o xtrace
-
-./run-playbook-initial-setup.sh
-./run-playbook-main.sh
+chmod 777 /scripts/*.*
+./scripts/run-playbook-initial-setup.sh
+./scripts/run-playbook-main.sh
