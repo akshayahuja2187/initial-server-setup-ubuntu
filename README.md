@@ -1,5 +1,9 @@
 # Initial Ubuntu 16.04 Server Setup
 
+## Pre-Requisites
+Git - To checkout this codebase
+Ansible 2.1 or higher - To run the Ansible playbooks
+
 ## What this playbook does
 
 - installs python2 and aptitude
@@ -67,3 +71,21 @@ To run only specific roles
 ```bash
 ansible-playbook main.yml --roles=user
 ```
+## Can also be run through Jenkins
+
+Jenkinsfile code snippet:
+
+stage('Checkout Source Code') {
+       deleteDir()
+       checkout scm
+      notifyStash();
+    }
+	
+stage('Run Ansible Playbook'){
+			withEnv(['ANSIBLE_HOST_KEY_CHECKING=False']) {
+				ansiblePlaybook credentialsId: 'sudouser', 
+				extras: "-v -e target_server=${target_env} -e username= -e env_id=${target_env} -e comp_name=sudo_deploy, 
+				installation: 'Ansible 2.1', 
+				inventory: 'inventory', 
+				playbook: 'playbooks/initial-setup.yml', 'playbooks/main.yml'
+				}
